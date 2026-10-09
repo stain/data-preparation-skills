@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data License Investigation"
+  short_description: "Establish and record the terms for using a dataset"
+  default_prompt: "Find out under what terms we may use and redistribute this dataset: identify owner, publisher and aggregators, collect evidence, classify it, and record the result in our metadata."

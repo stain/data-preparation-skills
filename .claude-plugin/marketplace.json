@@ -1,0 +1,17 @@
+{
+  "name": "data-preparation-skills",
+  "owner": {
+    "name": "Stian Soiland-Reyes"
+  },
+  "metadata": {
+    "description": "Agent Skills for reproducible data preparation, RO-Crate provenance and data licences",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "data-preparation-skills",
+      "description": "Reproducible data preparation, RO-Crate 1.3 provenance, and data licence investigation",
+      "source": "./"
+    }
+  ]
+}

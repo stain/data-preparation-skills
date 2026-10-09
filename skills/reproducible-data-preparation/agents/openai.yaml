@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reproducible Data Preparation"
+  short_description: "Download, validate and transform external data with provenance"
+  default_prompt: "Set up a reproducible pipeline to download this dataset, record its provenance, read it with explicit types, validate it, and prepare it at the grain my question needs."

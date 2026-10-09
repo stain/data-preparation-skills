@@ -1,0 +1,4 @@
+interface:
+  display_name: "RO-Crate Provenance"
+  short_description: "Describe data files as an RO-Crate 1.3 and validate it"
+  default_prompt: "Generate RO-Crate 1.3 metadata for this data directory, with checksums, licences, attribution and Process Run Crate actions for how the files were produced, then validate it."

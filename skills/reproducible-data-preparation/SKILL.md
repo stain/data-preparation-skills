@@ -4,7 +4,7 @@ description: Download external datasets and transform them into an analysis-read
 license: MIT
 metadata:
   author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Reproducible data preparation

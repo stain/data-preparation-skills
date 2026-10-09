@@ -4,7 +4,7 @@ description: Describe downloaded and derived data files with RO-Crate metadata (
 license: MIT
 metadata:
   author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # RO-Crate provenance for data files

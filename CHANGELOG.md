@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.1 (2026-10-09)
 
 - `reproducible-data-preparation`: downloads must retry transient failures with exponential
   backoff and jitter (honouring `Retry-After`), pause between requests, limit concurrency, and

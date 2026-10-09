@@ -112,6 +112,29 @@ Do not assume Snakemake writes Workflow Run Crates for you; plan your own writer
   use a resource such as `manifest_lock=1`).
 - Use `python -I` in `shell:` when scripts read untrusted downloads.
 
+### Snakemake best practices, applied to an overlay
+
+From the [Snakemake best practices](https://snakemake.readthedocs.io/en/stable/snakefiles/best_practices.html)
+(checked October 2026), what to adopt for data preparation:
+
+- **Adopt:** `snakemake --lint` (§ 5) and `snakefmt` before sharing; short, informative file
+  names with one separator style; the standard layout (`workflow/Snakefile`, `workflow/rules/`,
+  `workflow/profiles/`, `config/`, `results/`, `logs/`); helper Python functions in
+  `workflow/rules/common.smk` instead of `lambda`s in rules (the `crate_preview` input in
+  `assets/Snakefile.example` uses a lambda for brevity: move it there once it grows); source
+  lists, dates and sites in `config/` or a sample-sheet table rather than hard-coded in rules;
+  a small test dataset or date range in the repository, run by CI (GitHub Actions) if the
+  repository is shared.
+- **Runtime settings stay out of config files:** threads, resources and output folders belong
+  on the command line or in the profile (`--set-resources`, `--set-default-resources`,
+  `--directory`); the `downloads` resource and `cores` of § 2 and § 4 are examples.
+- **Adopt with judgement:** versioned conda/container annotations for every rule (see the lint
+  advice in § 5); interactive reports with categories and labels (`report:`), useful when the
+  workflow produces results people browse; wrappers (little to reuse for download scripts).
+- **Layout trade-off:** the guidance assumes workflows write into `results/`. An overlay keeps
+  the scripts' existing paths (`raw/`, manifests, crates) so provenance files stay valid; do
+  not move them just to match the layout.
+
 ## 5. Test the overlay
 
 Run these before relying on it, and record the results:
@@ -121,9 +144,20 @@ Run these before relying on it, and record the results:
    updated; the preview is regenerated **in the same run**.
 3. `snakemake --forcerun <transform rule>`: downstream rebuilt, outputs **byte-identical**
    (`git status` shows no change), no external requests.
-4. `snakemake --list-rules`, `snakemake --dag | dot -Tsvg > dag.svg` for documentation.
+4. `snakemake --lint`, and act on what it reports for an overlay of existing scripts:
+   - *No log directive defined*: **fix it.** Give each rule `log: "logs/<rule>/{wildcards}.log"`
+     and send the script's output there (`… > {log} 2>&1`), so concurrent download jobs do not
+     mix on the terminal and failures, retries and back-offs can be found afterwards. Add `logs/`
+     to `.gitignore`.
+   - *Specify a conda environment or container for each rule*: consider it, but do not adopt it
+     blindly. It documents the software a step needs, which suits a published workflow; for a
+     course or one-off repository where the scripts run in one documented environment
+     (`python -I`, a pinned requirements file), record that environment in `workflow/README.md`
+     and say that you accepted this lint knowingly.
+   Re-run `--lint` after changes; any remaining items should be deliberate and written down.
+5. `snakemake --list-rules`, `snakemake --dag | dot -Tsvg > dag.svg` for documentation.
 
-5. **Live end-to-end test from a sandbox** (an integration test): the steps above never prove that
+6. **Live end-to-end test from a sandbox** (an integration test): the steps above never prove that
    a *fresh* checkout can fetch everything and build the product. **Ask the user first.** It may
    take hours and sends real requests to the source servers; say roughly how many files and how
    much data, which servers, and the pacing and concurrency you will use, and offer a smaller
@@ -160,6 +194,8 @@ the limitations. Add `.snakemake/` to `.gitignore`. Work on a branch until the t
 - [ ] One job per external file; `wildcard_constraints`; scripts called with `--only … --no-check`
 - [ ] All downloads in the default target; parallel downloads limited by a `downloads` resource
 - [ ] Manifests and crate metadata not declared as outputs; previews depend on their writers
+- [ ] Best practices considered (layout, `snakefmt`, `common.smk`, config); deviations written down
+- [ ] `snakemake --lint`: log directives added; conda/container lint fixed or consciously accepted
 - [ ] Tests: dry run clean; one missing file fetched alone; forced step byte-identical
 - [ ] Live sandbox run offered to the user (asked first, not assumed); result reported
 - [ ] `workflow/README.md`; `.snakemake/` ignored

@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- `reproducible-data-preparation`: downloads must retry transient failures with exponential
+  backoff and jitter (honouring `Retry-After`), pause between requests, limit concurrency, and
+  write partial files under a temporary name; stricter pacing for many files.
+- `snakemake-data-pipeline`: limit parallel downloads with a `downloads` resource; keep backoff
+  in the script rather than Snakemake `--retries`.
+
 ## 0.2.0 (2026-10-09)
 
 - New skill `snakemake-data-pipeline`: Snakemake as an overlay of existing download and

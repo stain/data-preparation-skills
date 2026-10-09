@@ -71,6 +71,8 @@ rule download_dft:
     """Download one DfT file, unless it is already present."""
     output:
         f"{RAW_DFT}/{{dft_file}}",
+    resources:
+        downloads=1,  # with --resources downloads=N: at most N concurrent downloads
     shell:
         f"{PY}/download_dft.py --only {{wildcards.dft_file}} --no-check --no-preview"
 

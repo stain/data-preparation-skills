@@ -2,3 +2,4 @@
 cores: 1                 # the scripts share manifests and crates; run one job at a time
 rerun-triggers: [mtime]  # editing a script does not re-run downloads; use --forcerun to rebuild
 printshellcmds: true
+# resources: [downloads=2]  # if cores > 1: cap concurrent downloads (retry/backoff lives in the scripts)

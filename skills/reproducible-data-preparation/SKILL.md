@@ -26,7 +26,8 @@ air-quality measurements from a nearby monitoring site, prepared as a DuckDB tea
    Extract: variable definitions, units, time basis, missing-value conventions, revision policy,
    licence. Note what the documentation does *not* say.
 3. **Inventory candidate files** cheaply: `curl -sIL` for size, `Last-Modified`, `ETag`, server
-   hashes (e.g. `x-goog-hash` on Google Cloud Storage), before downloading.
+   hashes (e.g. `x-goog-hash` on Google Cloud Storage), before downloading. With many files, pace
+   these requests as for downloads (§ 1, "Be gentle with servers").
 4. **Check you have the right file.** If someone expects "about 5 million rows", count them
    (`unzip -p x.zip | wc -l`) and look *inside* archives (`unzip -l`). Per-entity convenience
    downloads often have a **different schema** from the bulk file (fewer columns, other names,
@@ -56,8 +57,26 @@ Rules:
 - **Extract archives in the download step**, so one step owns everything under `raw/<source>/`
   and its provenance (extracted file `isBasedOn` the archive).
 - **Multi-step web forms**: reproduce the form steps with a session (fetch the form, read hidden
-  fields such as query ids, submit, find the generated file link), be polite (`sleep`), and
+  fields such as query ids, submit, find the generated file link), pace the requests (below), and
   name local files deterministically from the request (e.g. `site_<from>_<to>.csv`).
+- **Be gentle with servers: retry with backoff, never hammer.** Every network request in a
+  download script goes through one helper that:
+  - sets a timeout and a descriptive `User-Agent` (project name and contact);
+  - retries only **transient** failures (connection errors, timeouts, HTTP 408, 429, 500, 502,
+    503, 504), a bounded number of times (e.g. 5), waiting exponentially longer each time
+    (e.g. 2, 4, 8, 16 s) with random jitter; honour a `Retry-After` header when present, and slow
+    down for the rest of the run after a 429/503;
+  - does **not** retry permanent errors (400, 401, 403, 404, hash or schema mismatch): fail
+    loudly instead (below);
+  - resumes or restarts a partial file from a temporary name and renames it only when complete,
+    so an interrupted download is never mistaken for a finished one.
+  With **many files**, also download sequentially (or with a small fixed concurrency, 2–4 per
+  host), keep a short pause between requests (e.g. 0.5–2 s, more for form-based or small
+  servers), check the source's terms or documentation for stated rate limits, and prefer one
+  bulk file over thousands of small requests when the source offers both. After repeated
+  failures, stop the run with a clear message (re-running is cheap because finished files are
+  skipped) instead of looping. Make the retry count, delay and pause options of the script, not
+  edits to it.
 - **Untrusted content**: put downloads in their own directory, keep scripts elsewhere, run
   Python with `-I`, never execute anything from a download.
 - Fail loudly on unexpected responses (missing form fields, no file link, hash mismatch).
@@ -158,7 +177,8 @@ For a database hand-out (DuckDB worked well):
 - [ ] Questions and target grain written down
 - [ ] Source docs read; time basis, units, missing values, licence noted
 - [ ] Right files confirmed (inside archives; expected row counts)
-- [ ] Download scripts with manifest, hashes, schema capture, no re-download
+- [ ] Download scripts with manifest, hashes, schema capture, no re-download, retry with backoff
+  and pauses between requests
 - [ ] Explicit types; NULL not 0; validation CSV with errors/warnings
 - [ ] Time basis tested empirically; alignment rule documented
 - [ ] Grain stated for every output; fan-out checked; windows on time

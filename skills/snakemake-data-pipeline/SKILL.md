@@ -62,6 +62,12 @@ retrieved identically) as soon as one output is missing. Instead:
 - **Downloads whose file names are only known at run time** (e.g. web-form requests derived from
   another table): declare a small summary report as the output, let the script skip files that
   exist, and make the rule depend on the table that defines the requests.
+- **Keep backoff in the script, and limit parallel downloads.** One job per file means Snakemake
+  may start many download jobs at once (`--cores N`). Give the download rule a
+  `resources: downloads=1` and run with `--resources downloads=2` (or similar) so the server sees
+  a handful of connections, and let the script do retry-with-backoff and pacing as described in
+  `reproducible-data-preparation`. Avoid relying on `--retries`/`restart_times` for network
+  errors: it restarts the job immediately, without waiting, and also retries permanent failures.
 - Put every download in `rule all` (or a `downloads` target), otherwise a deleted file nobody
   depends on is silently not replaced.
 
@@ -131,7 +137,7 @@ the limitations. Add `.snakemake/` to `.gitignore`. Work on a branch until the t
 - [ ] Scripts still runnable alone; Snakefile only declares inputs/outputs
 - [ ] Profile: one core, mtime-only rerun triggers
 - [ ] One job per external file; `wildcard_constraints`; scripts called with `--only … --no-check`
-- [ ] All downloads in the default target
+- [ ] All downloads in the default target; parallel downloads limited by a `downloads` resource
 - [ ] Manifests and crate metadata not declared as outputs; previews depend on their writers
 - [ ] Tests: dry run clean; one missing file fetched alone; forced step byte-identical
 - [ ] `workflow/README.md`; `.snakemake/` ignored

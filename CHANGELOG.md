@@ -6,7 +6,8 @@
   backoff and jitter (honouring `Retry-After`), pause between requests, limit concurrency, and
   write partial files under a temporary name; stricter pacing for many files.
 - `snakemake-data-pipeline`: limit parallel downloads with a `downloads` resource; keep backoff
-  in the script rather than Snakemake `--retries`.
+  in the script rather than Snakemake `--retries`; new test step: live end-to-end run from a
+  sandbox, only after asking the user.
 
 ## 0.2.0 (2026-10-09)
 

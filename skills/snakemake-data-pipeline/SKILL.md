@@ -123,6 +123,27 @@ Run these before relying on it, and record the results:
    (`git status` shows no change), no external requests.
 4. `snakemake --list-rules`, `snakemake --dag | dot -Tsvg > dag.svg` for documentation.
 
+5. **Live end-to-end test from a sandbox** (an integration test): the steps above never prove that
+   a *fresh* checkout can fetch everything and build the product. **Ask the user first.** It may
+   take hours and sends real requests to the source servers; say roughly how many files and how
+   much data, which servers, and the pacing and concurrency you will use, and offer a smaller
+   scope (one or two small files, a short date range) or skipping it. Do not start it without a
+   yes, and do not repeat it more than needed.
+   - Work in a **clean clone** (`git clone` of the repository into a scratch directory, with no
+     `raw/` or other untracked files), never in the working tree, so no real data, manifest or
+     crate is overwritten. Commit what you want tested first: an unpushed clone from the local
+     path is fine.
+   - Run the normal command with `--forceall`, so every step runs, whatever exists
+     (`snakemake --profile … --forceall`). In the clean clone this deletes nothing of value;
+     in the working tree it would, which is another reason for the clone. Use the real
+     retry/backoff and pacing settings; never loosen them to make the test faster.
+   - Check: the run completes; manifests, hashes and schema captures match the committed ones (a
+     `git diff` against the original shows only expected upstream changes); validation passes;
+     RO-Crate metadata validates; a second run (without `--forceall`) reports **nothing to be done** and makes no
+     external requests.
+   - Report what happened (duration, retries, failures, differences) and what was not tested.
+     Delete the sandbox afterwards, or ask whether to keep it.
+
 Snakemake reports "jobs have missing provenance/metadata" for files created before the workflow
 existed; this is informational.
 
@@ -140,5 +161,6 @@ the limitations. Add `.snakemake/` to `.gitignore`. Work on a branch until the t
 - [ ] All downloads in the default target; parallel downloads limited by a `downloads` resource
 - [ ] Manifests and crate metadata not declared as outputs; previews depend on their writers
 - [ ] Tests: dry run clean; one missing file fetched alone; forced step byte-identical
+- [ ] Live sandbox run offered to the user (asked first, not assumed); result reported
 - [ ] `workflow/README.md`; `.snakemake/` ignored
 - [ ] Plan for metadata as a pure-function rule and Workflow Run Crate

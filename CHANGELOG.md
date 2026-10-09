@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.2.2 (2026-10-09)
 
 - `snakemake-data-pipeline`: run `snakemake --lint`; add `log:` directives, and fix or consciously
   accept the conda/container lint; section on the official best practices applied to an overlay.

@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Agent Skills for reproducible data preparation, RO-Crate provenance and data licences",
-    "version": "0.2.1"
+    "version": "0.2.2"
   },
   "plugins": [
     {

@@ -1,6 +1,6 @@
 {
   "name": "data-preparation-skills",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Agent Skills for reproducible data preparation: scripted downloads with provenance and validation, RO-Crate 1.3 metadata with Process Run Crate actions, investigating data licences, and Snakemake overlays for such pipelines.",
   "author": {
     "name": "Stian Soiland-Reyes, The University of Manchester",

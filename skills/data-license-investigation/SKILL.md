@@ -4,7 +4,7 @@ description: Find out under what terms a dataset may be used and redistributed, 
 license: MIT
 metadata:
   author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Investigating data licences

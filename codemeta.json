@@ -48,5 +48,9 @@
   "copyrightYear": 2026,
   "codeRepository": "https://github.com/stain/data-preparation-skills",
   "issueTracker": "https://github.com/stain/data-preparation-skills/issues",
-  "url": "https://github.com/stain/data-preparation-skills"
+  "url": "https://github.com/stain/data-preparation-skills",
+  "dateModified": "2026-10-09",
+  "datePublished": "2026-10-09",
+  "downloadUrl": "https://github.com/stain/data-preparation-skills/archive/refs/tags/v0.2.0.zip",
+  "releaseNotes": "New skill snakemake-data-pipeline: Snakemake as an overlay of existing download and transformation scripts (one job per external file, side-effect provenance files, tests). See CHANGELOG.md."
 }

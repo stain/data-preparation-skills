@@ -27,5 +27,7 @@
       "Describe the files in this directory as an RO-Crate 1.3 and validate it.",
       "Find out under what licence we may redistribute this dataset, and record the evidence."
     ]
-  }
+  },
+  "homepage": "https://github.com/stain/data-preparation-skills",
+  "repository": "https://github.com/stain/data-preparation-skills"
 }

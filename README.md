@@ -60,12 +60,12 @@ produced it.
 
 ## Installing
 
-Replace `OWNER/data-preparation-skills` with the repository location.
+Repository: <https://github.com/stain/data-preparation-skills>
 
 **Claude Code**, as a plugin:
 
 ```text
-/plugin marketplace add OWNER/data-preparation-skills
+/plugin marketplace add stain/data-preparation-skills
 /plugin install data-preparation-skills@data-preparation-skills
 ```
 

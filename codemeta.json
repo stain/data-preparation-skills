@@ -44,5 +44,8 @@
       "@id": "https://orcid.org/0000-0001-9842-9718"
     }
   ],
-  "copyrightYear": 2026
+  "copyrightYear": 2026,
+  "codeRepository": "https://github.com/stain/data-preparation-skills",
+  "issueTracker": "https://github.com/stain/data-preparation-skills/issues",
+  "url": "https://github.com/stain/data-preparation-skills"
 }

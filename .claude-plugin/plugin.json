@@ -16,5 +16,7 @@
     "reproducibility",
     "duckdb",
     "snakemake"
-  ]
+  ],
+  "homepage": "https://github.com/stain/data-preparation-skills",
+  "repository": "https://github.com/stain/data-preparation-skills"
 }

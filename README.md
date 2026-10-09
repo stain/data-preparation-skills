@@ -62,22 +62,51 @@ produced it.
 
 Repository: <https://github.com/stain/data-preparation-skills>
 
-**Claude Code**, as a plugin:
+### Claude Code
+
+As a plugin, in two steps (in Claude Code; or `claude plugin …` in a terminal):
 
 ```text
 /plugin marketplace add stain/data-preparation-skills
 /plugin install data-preparation-skills@data-preparation-skills
 ```
 
-or copy (or symlink) individual skill folders into `.claude/skills/` in a project, or
-`~/.claude/skills/` for all projects.
+1. **Add the marketplace first.** This repository is its own plugin marketplace
+   (`.claude-plugin/marketplace.json`); nothing needs publishing elsewhere. If `install` reports
+   *Marketplace "data-preparation-skills" not found*, the marketplace has not been added yet:
+   run the `add` step and check it with `/plugin marketplace list`.
+2. **Install the plugin.** The part after `@` is the marketplace's name, which here is the same
+   as the plugin's name. The plugin contains **all three skills**.
 
-**OpenAI Codex**: copy (or symlink) skill folders into `.agents/skills/` in a repository, or
+Start a new session (or restart Claude Code) so the skills are loaded; `/plugin` shows the
+installed plugin. Claude then picks a skill when a request matches its description, or you can
+name it with the plugin prefix:
+
+```text
+/data-preparation-skills:ro-crate-provenance  describe and validate data/raw/mysource/
+```
+
+To update later: `/plugin marketplace update data-preparation-skills`.
+
+**Only one skill**, without the plugin: copy (or symlink) its folder into `.claude/skills/` in a
+project, or `~/.claude/skills/` for all projects; it is then available without the prefix
+(e.g. `/ro-crate-provenance`):
+
+```bash
+git clone https://github.com/stain/data-preparation-skills
+cp -r data-preparation-skills/skills/ro-crate-provenance ~/.claude/skills/
+```
+
+### OpenAI Codex
+
+Copy (or symlink) skill folders into `.agents/skills/` in a repository, or
 `~/.agents/skills/` for all repositories; Codex detects them automatically (restart if one does not
 appear). The repository is also laid out as a Codex plugin (`.codex-plugin/plugin.json`), and you
 can ask Codex's `$skill-installer` to install skills from this repository.
 
-**Other agents**: any tool that supports the [Agent Skills](https://agentskills.io/) format can
+### Other agents
+
+Any tool that supports the [Agent Skills](https://agentskills.io/) format can
 load the folders under `skills/`. Without an agent, read each `SKILL.md` as a checklist.
 
 ## Example prompts

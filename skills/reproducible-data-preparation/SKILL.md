@@ -3,7 +3,7 @@ name: reproducible-data-preparation
 description: Download external datasets and transform them into an analysis-ready data product with a reproducible, validated, provenance-recording pipeline. Use when gathering data from public sources (government statistics, monitoring networks, web download forms), integrating sources with different grains, time bases or locations, or preparing a database/files for analysts or students.
 license: MIT
 metadata:
-  author: Stian Soiland-Reyes
+  author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
   version: "0.1.0"
 ---
 

@@ -3,7 +3,7 @@ name: ro-crate-provenance
 description: Describe downloaded and derived data files with RO-Crate metadata (ro-crate-metadata.json and HTML preview), including licences, attribution, checksums and the actions that produced them (Process Run Crate), and validate the result. Use when packaging datasets, recording provenance of a data pipeline, or when asked for RO-Crate, Process/Workflow Run Crate, or FAIR metadata for files. Targets RO-Crate 1.3.
 license: MIT
 metadata:
-  author: Stian Soiland-Reyes
+  author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
   version: "0.1.0"
 ---
 
@@ -115,6 +115,8 @@ rocrate-validator validate -p process-run-crate-0.5 --requirement-severity RECOM
 - Use `--output-format json`; the output may be followed by a log block, so parse the first JSON
   value (`json.JSONDecoder().raw_decode`).
 - Run as `< /dev/null` to avoid interactive prompts.
+- `--metadata-only` (`-m`) validates the metadata without requiring the data files, for crates
+  whose payload is not present (e.g. git-ignored data, metadata-only examples).
 - Target: **no REQUIRED failures** for the base spec. Treat RECOMMENDED as a review list and
   OPTIONAL output as noise.
 - **Check the validator's profile against your target version**: `profiles list`, and the

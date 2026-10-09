@@ -50,8 +50,13 @@ skills/<skill-name>/
   plugin.json            OpenAI Codex plugin manifest ("skills": "./skills/")
 .agents/plugins/
   marketplace.json       Codex marketplace entry for this repository
+examples/                real outputs: RO-Crates, manifests, validation reports, licence record
+codemeta.json            software metadata (CodeMeta 3.1)
 LICENSE                  MIT
 ```
+
+See [`examples/README.md`](examples/README.md) for what each example output shows and which skill
+produced it.
 
 ## Installing
 
@@ -142,4 +147,6 @@ plugin manifests and the skills' `metadata.version`.
 
 ## Licence
 
-MIT, see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE). © 2026 Stian Soiland-Reyes
+([0000-0001-9842-9718](https://orcid.org/0000-0001-9842-9718)), The University of Manchester.
+The example outputs in [`examples/`](examples/) keep their own licence statements.

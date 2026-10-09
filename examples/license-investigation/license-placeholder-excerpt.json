@@ -1,0 +1,74 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.3/context",
+  "@graph": [
+    {
+      "@id": "man1_2010-06-20_2010-06-22.csv",
+      "@type": "File",
+      "name": "MAN1 hourly air quality around DfT count date 2010-06-21",
+      "license": {
+        "@id": "#licence-placeholder-air-quality-england"
+      },
+      "usageInfo": {
+        "@id": "#licence-placeholder-air-quality-england"
+      },
+      "creditText": "Air quality data for Manchester Oxford Road (MAN1), Manchester City Council, from Air Quality England (https://www.airqualityengland.co.uk), operated by Ricardo Energy & Environment."
+    },
+    {
+      "@id": "http://spdx.org/licenses/CC-BY-NC-4.0",
+      "@type": "CreativeWork",
+      "name": "Creative Commons Attribution Non Commercial 4.0 International",
+      "identifier": "CC-BY-NC-4.0",
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "description": "CC BY-NC 4.0: free to share and adapt for non-commercial purposes, with attribution and an indication of changes."
+    },
+    {
+      "@id": "#licence-placeholder-air-quality-england",
+      "@type": "CreativeWork",
+      "name": "Licence placeholder: Air Quality England downloads (unconfirmed)",
+      "dateCreated": "2026-10-09",
+      "description": "Placeholder: no licence is stated for data downloaded from Air Quality England, so no `license` is asserted. Checked 2026-10-09: (1) Air Quality England's only terms page covers its alert service, not the data. (2) Clean Air Greater Manchester, where Manchester City Council points users for this data, shows only site copyright and an accuracy disclaimer. (3) Manchester City Council, the data owner, states that unless otherwise stated data on its own website is published under the Open Government Licence (OGL) v3.0, with attribution and the council retaining IPR; this does not explicitly cover data downloaded from Air Quality England (council pages block automated access; quoted from search results). (4) UK-AIR (Defra) publishes its information under OGL v3.0 and also shows locally managed sites such as MAN1, but does not explicitly extend OGL to local authority data (UK-AIR was down for maintenance during the check). Files from this source reference this placeholder as their `license` (and `usageInfo`), overriding the crate's own licence (CC BY-NC 4.0), which is not a grant of rights over the downloaded data. Assumptions: OGL v3.0 is probably intended; the same terms apply to all data downloaded from Air Quality England for Manchester City Council sites. Decision (course staff, 2026-10-09): the data, and data derived from them, may be redistributed within The University of Manchester for non-commercial teaching, with attribution, provided these terms and this RO-Crate metadata accompany them. Do not publish them outside the institution until the licence is confirmed (opendata@manchester.gov.uk or aqinfo@ricardo.com).",
+      "isBasedOn": [
+        {
+          "@id": "https://www.airqualityengland.co.uk/term-condition"
+        },
+        {
+          "@id": "https://cleanairgm.com/disclaimer/"
+        },
+        {
+          "@id": "https://open.manchester.gov.uk/info/6/terms_and_licensing"
+        },
+        {
+          "@id": "https://uk-air.defra.gov.uk/about-these-pages"
+        },
+        {
+          "@id": "https://uk-air.defra.gov.uk/news?view=272"
+        }
+      ]
+    },
+    {
+      "@id": "https://www.airqualityengland.co.uk/term-condition",
+      "@type": "WebPage",
+      "name": "Air Quality England: Terms and Conditions (alert service)"
+    },
+    {
+      "@id": "https://cleanairgm.com/disclaimer/",
+      "@type": "WebPage",
+      "name": "Clean Air Greater Manchester: Disclaimer"
+    },
+    {
+      "@id": "https://open.manchester.gov.uk/info/6/terms_and_licensing",
+      "@type": "WebPage",
+      "name": "Manchester City Council open data: terms and licensing"
+    },
+    {
+      "@id": "https://uk-air.defra.gov.uk/about-these-pages",
+      "@type": "WebPage",
+      "name": "About UK-AIR (licence and attribution)"
+    },
+    {
+      "@id": "https://uk-air.defra.gov.uk/news?view=272",
+      "@type": "WebPage",
+      "name": "UK-AIR: National and local monitoring data now available in one place"
+    }
+  ]
+}

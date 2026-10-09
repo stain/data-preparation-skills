@@ -1,0 +1,790 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.3/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.3"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/wfrun/process/0.6"
+      },
+      "name": "DfT road traffic statistics: source downloads for COMP63301 Workshop 8",
+      "description": "Unmodified Department for Transport road-traffic files (raw manual counts, AADF estimates, count-point metadata and documentation) downloaded for COMP63301 Data Engineering Concepts Week 8, with the CSV files extracted from the ZIP archives.",
+      "datePublished": "2026-10-09",
+      "isBasedOn": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      },
+      "author": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      },
+      "publisher": {
+        "@id": "https://ror.org/027m9bs27"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "hasPart": [
+        {
+          "@id": "dft_traffic_counts_raw_counts.zip"
+        },
+        {
+          "@id": "dft_traffic_counts_aadf.zip"
+        },
+        {
+          "@id": "count_points.zip"
+        },
+        {
+          "@id": "all-traffic-data-metadata.pdf"
+        },
+        {
+          "@id": "dft_rawcount_count_point_id_6069.csv"
+        },
+        {
+          "@id": "dft_aadf_count_point_id_6069.csv"
+        },
+        {
+          "@id": "extracted/"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "urn:uuid:27fa9ee0-08b9-58e1-8e48-f4981068ff25"
+        },
+        {
+          "@id": "urn:uuid:c999c6b3-3c99-535c-9f1c-789f04ecfce4"
+        },
+        {
+          "@id": "urn:uuid:f7ac855b-6bc4-528f-8196-8636fe4a6a9e"
+        },
+        {
+          "@id": "urn:uuid:dffc5358-90e9-5fa8-a72a-c05290c547d4"
+        },
+        {
+          "@id": "urn:uuid:07673294-8c3a-5f17-9a24-02fdf241b06d"
+        },
+        {
+          "@id": "urn:uuid:4309670e-13d6-58d3-af25-6576661c33b8"
+        },
+        {
+          "@id": "urn:uuid:15cf157f-8b12-5062-852a-b65a338e17b5"
+        },
+        {
+          "@id": "urn:uuid:0fbd05db-aea8-587d-9594-1056a42e8450"
+        },
+        {
+          "@id": "urn:uuid:2cb276e4-592d-5ef2-bede-840087cb2def"
+        }
+      ]
+    },
+    {
+      "@id": "extracted/",
+      "@type": "Dataset",
+      "name": "CSV files extracted from the DfT ZIP archives",
+      "description": "Each CSV is the single member of the corresponding ZIP download, extracted without modification. Not committed to Git (about 1.2 GB); re-create by running the download step.",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "hasPart": [
+        {
+          "@id": "extracted/dft_traffic_counts_raw_counts.csv"
+        },
+        {
+          "@id": "extracted/dft_traffic_counts_aadf.csv"
+        },
+        {
+          "@id": "extracted/count_points.csv"
+        }
+      ]
+    },
+    {
+      "@id": "dft_traffic_counts_raw_counts.zip",
+      "@type": "File",
+      "name": "Raw manual traffic counts, Great Britain",
+      "description": "Manual counts by trained enumerators of vehicles passing each count point on a single count day, by direction, hour (07:00-19:00) and vehicle class, 2000 onwards.",
+      "encodingFormat": [
+        "application/zip",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"
+        }
+      ],
+      "contentSize": "88768775",
+      "sha256": "8b5ff900af18a0dd3cbabdc64c8e78fe1d3a042c933102c4973d79bc46b1a9db",
+      "url": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_raw_counts.zip",
+      "sdDatePublished": "2026-10-09T08:33:48+00:00",
+      "dateModified": "2026-06-03T20:55:37+00:00",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      }
+    },
+    {
+      "@id": "dft_traffic_counts_aadf.zip",
+      "@type": "File",
+      "name": "Annual average daily flow (AADF) estimates, Great Britain",
+      "description": "Estimated average number of vehicles passing each count point on an average day of the year, by vehicle class, with the estimation method used for each count point and year.",
+      "encodingFormat": [
+        "application/zip",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"
+        }
+      ],
+      "contentSize": "19464638",
+      "sha256": "5273cf63da4ca8b317bfe972d8a345e7932db0fff7a7789998a890f0081232b6",
+      "url": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip",
+      "sdDatePublished": "2026-10-09T08:33:49+00:00",
+      "dateModified": "2026-06-03T20:54:54+00:00",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      }
+    },
+    {
+      "@id": "count_points.zip",
+      "@type": "File",
+      "name": "Count point metadata, Great Britain",
+      "description": "Identifier, road, junctions, local authority, region, coordinates and link length of every count point, by year.",
+      "encodingFormat": [
+        "application/zip",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"
+        }
+      ],
+      "contentSize": "1648553",
+      "sha256": "4772abb13761694f35c7aba6d83915c5c168e94a0d25ae401e4b7e84ef7fcff2",
+      "url": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/count_points.zip",
+      "sdDatePublished": "2026-10-09T08:33:50+00:00",
+      "dateModified": "2026-06-03T21:03:16+00:00",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      }
+    },
+    {
+      "@id": "all-traffic-data-metadata.pdf",
+      "@type": "File",
+      "name": "Road Traffic Statistics metadata",
+      "description": "DfT guidance on the contents of the downloadable datasets and definitions of their variables and road categories.",
+      "encodingFormat": [
+        "application/pdf",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/20"
+        }
+      ],
+      "contentSize": "336177",
+      "sha256": "34269c3810e8bede4e0f981471ab201c075b503960e88d27bf28617578b5668e",
+      "url": "https://storage.googleapis.com/dft-statistics/road-traffic/all-traffic-data-metadata.pdf",
+      "sdDatePublished": "2026-10-09T08:33:50+00:00",
+      "dateModified": "2026-06-03T21:05:16+00:00",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      }
+    },
+    {
+      "@id": "dft_rawcount_count_point_id_6069.csv",
+      "@type": "File",
+      "name": "Raw manual traffic counts, count point 6069",
+      "description": "DfT's per-count-point download of raw counts for count point 6069 (A57(M) Mancunian Way, between A34 and A6, Manchester). Reduced schema: no road_category or ONS codes, lower-case column names, rounded coordinates.",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "contentSize": "21471",
+      "sha256": "ee2de6a8c4e69f15335370ee5b8454e45562e5bfcbd359e19ae6d78578c90b36",
+      "url": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/rawcount/count_point_id/dft_rawcount_count_point_id_6069.csv",
+      "sdDatePublished": "2026-10-09T08:33:50+00:00",
+      "dateModified": "2026-06-03T20:57:22+00:00",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      }
+    },
+    {
+      "@id": "dft_aadf_count_point_id_6069.csv",
+      "@type": "File",
+      "name": "Annual average daily flow (AADF) estimates, count point 6069",
+      "description": "DfT's per-count-point download of AADF estimates for count point 6069, in the same reduced schema as the raw-count equivalent.",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "contentSize": "6522",
+      "sha256": "0379c18b8ee4365ab431172e0c501fa2edc76bae8f0af7a8bbb4b80638c30eb4",
+      "url": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/aadf/count_point_id/dft_aadf_count_point_id_6069.csv",
+      "sdDatePublished": "2026-10-09T08:33:50+00:00",
+      "dateModified": "2026-06-03T21:04:35+00:00",
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      }
+    },
+    {
+      "@id": "extracted/dft_traffic_counts_raw_counts.csv",
+      "@type": "File",
+      "name": "Raw manual traffic counts, Great Britain (CSV)",
+      "description": "dft_traffic_counts_raw_counts.csv as extracted from dft_traffic_counts_raw_counts.zip, unmodified.",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "contentSize": "1038563847",
+      "sha256": "d613cce4d519d04514780e39ad1f3ae2ef4310357ce454b9704c8a3ed21294a8",
+      "dateCreated": "2026-10-09T08:34:07+00:00",
+      "isBasedOn": {
+        "@id": "dft_traffic_counts_raw_counts.zip"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      }
+    },
+    {
+      "@id": "extracted/dft_traffic_counts_aadf.csv",
+      "@type": "File",
+      "name": "Annual average daily flow (AADF) estimates, Great Britain (CSV)",
+      "description": "dft_traffic_counts_aadf.csv as extracted from dft_traffic_counts_aadf.zip, unmodified.",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "contentSize": "149902213",
+      "sha256": "446ed2c437501e250a125e15a201fd3e122b5b77e75a5a186a50f3a323b8b521",
+      "dateCreated": "2026-10-09T08:34:28+00:00",
+      "isBasedOn": {
+        "@id": "dft_traffic_counts_aadf.zip"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      }
+    },
+    {
+      "@id": "extracted/count_points.csv",
+      "@type": "File",
+      "name": "Count point metadata, Great Britain (CSV)",
+      "description": "count_points.csv as extracted from count_points.zip, unmodified.",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "contentSize": "6973989",
+      "sha256": "ada07c138eb8ea6caefcba42d2dda61dc6d4bd3c24ef7e349251f7cdb982475a",
+      "dateCreated": "2026-10-09T08:43:24+00:00",
+      "isBasedOn": {
+        "@id": "count_points.zip"
+      },
+      "subjectOf": {
+        "@id": "all-traffic-data-metadata.pdf"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      },
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "creditText": "Department for Transport, Road traffic statistics, https://roadtraffic.dft.gov.uk/downloads. Contains public sector information licensed under the Open Government Licence v3.0.",
+      "mainEntityOfPage": {
+        "@id": "https://roadtraffic.dft.gov.uk/downloads"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.6",
+      "@type": [
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Process Run Crate",
+      "version": "0.6"
+    },
+    {
+      "@id": "https://roadtraffic.dft.gov.uk/downloads",
+      "@type": "WebPage",
+      "name": "Road traffic statistics: downloads",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      }
+    },
+    {
+      "@id": "https://ror.org/027m9bs27",
+      "@type": "Organization",
+      "name": "The University of Manchester",
+      "url": "https://www.manchester.ac.uk/"
+    },
+    {
+      "@id": "https://ror.org/010mf0m52",
+      "@type": "Organization",
+      "name": "Department for Transport",
+      "url": "https://www.gov.uk/government/organisations/department-for-transport"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "@type": "CreativeWork",
+      "name": "Open Government Licence v3.0",
+      "identifier": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "description": "Free to copy, publish, distribute, transmit and adapt the information, including commercially, provided the source is acknowledged with an attribution statement."
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "ZIP Format"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "Comma Separated Values"
+    },
+    {
+      "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/20",
+      "@type": [
+        "WebPage",
+        "Standard"
+      ],
+      "name": "Acrobat PDF 1.6 - Portable Document Format"
+    },
+    {
+      "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_raw_counts.zip",
+      "@type": "DataDownload",
+      "name": "Raw manual traffic counts, Great Britain",
+      "contentUrl": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_raw_counts.zip",
+      "encodingFormat": [
+        "application/zip",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"
+        }
+      ],
+      "dateModified": "2026-06-03T20:55:37+00:00",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    },
+    {
+      "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip",
+      "@type": "DataDownload",
+      "name": "Annual average daily flow (AADF) estimates, Great Britain",
+      "contentUrl": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip",
+      "encodingFormat": [
+        "application/zip",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"
+        }
+      ],
+      "dateModified": "2026-06-03T20:54:54+00:00",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    },
+    {
+      "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/count_points.zip",
+      "@type": "DataDownload",
+      "name": "Count point metadata, Great Britain",
+      "contentUrl": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/count_points.zip",
+      "encodingFormat": [
+        "application/zip",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/263"
+        }
+      ],
+      "dateModified": "2026-06-03T21:03:16+00:00",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    },
+    {
+      "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/all-traffic-data-metadata.pdf",
+      "@type": "DataDownload",
+      "name": "Road Traffic Statistics metadata",
+      "contentUrl": "https://storage.googleapis.com/dft-statistics/road-traffic/all-traffic-data-metadata.pdf",
+      "encodingFormat": [
+        "application/pdf",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/fmt/20"
+        }
+      ],
+      "dateModified": "2026-06-03T21:05:16+00:00",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    },
+    {
+      "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/rawcount/count_point_id/dft_rawcount_count_point_id_6069.csv",
+      "@type": "DataDownload",
+      "name": "Raw manual traffic counts, count point 6069",
+      "contentUrl": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/rawcount/count_point_id/dft_rawcount_count_point_id_6069.csv",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "dateModified": "2026-06-03T20:57:22+00:00",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    },
+    {
+      "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/aadf/count_point_id/dft_aadf_count_point_id_6069.csv",
+      "@type": "DataDownload",
+      "name": "Annual average daily flow (AADF) estimates, count point 6069",
+      "contentUrl": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/aadf/count_point_id/dft_aadf_count_point_id_6069.csv",
+      "encodingFormat": [
+        "text/csv",
+        {
+          "@id": "https://www.nationalarchives.gov.uk/PRONOM/x-fmt/18"
+        }
+      ],
+      "dateModified": "2026-06-03T21:04:35+00:00",
+      "publisher": {
+        "@id": "https://ror.org/010mf0m52"
+      },
+      "license": {
+        "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      }
+    },
+    {
+      "@id": "urn:uuid:27fa9ee0-08b9-58e1-8e48-f4981068ff25",
+      "@type": "CreateAction",
+      "name": "Download dft_traffic_counts_raw_counts.zip from DfT",
+      "description": "HTTPS GET of https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_raw_counts.zip; MD5 verified against the x-goog-hash response header and SHA-256 recorded.",
+      "object": {
+        "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_raw_counts.zip"
+      },
+      "result": {
+        "@id": "dft_traffic_counts_raw_counts.zip"
+      },
+      "startTime": "2026-10-09T08:33:48+00:00",
+      "endTime": "2026-10-09T08:33:49+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://pypi.org/project/requests/2.34.2/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:c999c6b3-3c99-535c-9f1c-789f04ecfce4",
+      "@type": "CreateAction",
+      "name": "Download dft_traffic_counts_aadf.zip from DfT",
+      "description": "HTTPS GET of https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip; MD5 verified against the x-goog-hash response header and SHA-256 recorded.",
+      "object": {
+        "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip"
+      },
+      "result": {
+        "@id": "dft_traffic_counts_aadf.zip"
+      },
+      "startTime": "2026-10-09T08:33:49+00:00",
+      "endTime": "2026-10-09T08:33:50+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://pypi.org/project/requests/2.34.2/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:f7ac855b-6bc4-528f-8196-8636fe4a6a9e",
+      "@type": "CreateAction",
+      "name": "Download count_points.zip from DfT",
+      "description": "HTTPS GET of https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/count_points.zip; MD5 verified against the x-goog-hash response header and SHA-256 recorded.",
+      "object": {
+        "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/count_points.zip"
+      },
+      "result": {
+        "@id": "count_points.zip"
+      },
+      "startTime": "2026-10-09T08:33:50+00:00",
+      "endTime": "2026-10-09T08:33:50+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://pypi.org/project/requests/2.34.2/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:dffc5358-90e9-5fa8-a72a-c05290c547d4",
+      "@type": "CreateAction",
+      "name": "Download all-traffic-data-metadata.pdf from DfT",
+      "description": "HTTPS GET of https://storage.googleapis.com/dft-statistics/road-traffic/all-traffic-data-metadata.pdf; MD5 verified against the x-goog-hash response header and SHA-256 recorded.",
+      "object": {
+        "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/all-traffic-data-metadata.pdf"
+      },
+      "result": {
+        "@id": "all-traffic-data-metadata.pdf"
+      },
+      "startTime": "2026-10-09T08:33:50+00:00",
+      "endTime": "2026-10-09T08:33:50+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://pypi.org/project/requests/2.34.2/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:07673294-8c3a-5f17-9a24-02fdf241b06d",
+      "@type": "CreateAction",
+      "name": "Download dft_rawcount_count_point_id_6069.csv from DfT",
+      "description": "HTTPS GET of https://storage.googleapis.com/dft-statistics/road-traffic/downloads/rawcount/count_point_id/dft_rawcount_count_point_id_6069.csv; MD5 verified against the x-goog-hash response header and SHA-256 recorded.",
+      "object": {
+        "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/rawcount/count_point_id/dft_rawcount_count_point_id_6069.csv"
+      },
+      "result": {
+        "@id": "dft_rawcount_count_point_id_6069.csv"
+      },
+      "startTime": "2026-10-09T08:33:50+00:00",
+      "endTime": "2026-10-09T08:33:50+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://pypi.org/project/requests/2.34.2/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:4309670e-13d6-58d3-af25-6576661c33b8",
+      "@type": "CreateAction",
+      "name": "Download dft_aadf_count_point_id_6069.csv from DfT",
+      "description": "HTTPS GET of https://storage.googleapis.com/dft-statistics/road-traffic/downloads/aadf/count_point_id/dft_aadf_count_point_id_6069.csv; MD5 verified against the x-goog-hash response header and SHA-256 recorded.",
+      "object": {
+        "@id": "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/aadf/count_point_id/dft_aadf_count_point_id_6069.csv"
+      },
+      "result": {
+        "@id": "dft_aadf_count_point_id_6069.csv"
+      },
+      "startTime": "2026-10-09T08:33:50+00:00",
+      "endTime": "2026-10-09T08:33:50+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://pypi.org/project/requests/2.34.2/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:15cf157f-8b12-5062-852a-b65a338e17b5",
+      "@type": "CreateAction",
+      "name": "Extract dft_traffic_counts_raw_counts.csv from dft_traffic_counts_raw_counts.zip",
+      "description": "Extract member dft_traffic_counts_raw_counts.csv of dft_traffic_counts_raw_counts.zip into extracted/ without modification.",
+      "object": {
+        "@id": "dft_traffic_counts_raw_counts.zip"
+      },
+      "result": {
+        "@id": "extracted/dft_traffic_counts_raw_counts.csv"
+      },
+      "endTime": "2026-10-09T08:34:07+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://www.python.org/downloads/release/python-3148/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:0fbd05db-aea8-587d-9594-1056a42e8450",
+      "@type": "CreateAction",
+      "name": "Extract dft_traffic_counts_aadf.csv from dft_traffic_counts_aadf.zip",
+      "description": "Extract member dft_traffic_counts_aadf.csv of dft_traffic_counts_aadf.zip into extracted/ without modification.",
+      "object": {
+        "@id": "dft_traffic_counts_aadf.zip"
+      },
+      "result": {
+        "@id": "extracted/dft_traffic_counts_aadf.csv"
+      },
+      "endTime": "2026-10-09T08:34:28+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://www.python.org/downloads/release/python-3148/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "urn:uuid:2cb276e4-592d-5ef2-bede-840087cb2def",
+      "@type": "CreateAction",
+      "name": "Extract count_points.csv from count_points.zip",
+      "description": "Extract member count_points.csv of count_points.zip into extracted/ without modification.",
+      "object": {
+        "@id": "count_points.zip"
+      },
+      "result": {
+        "@id": "extracted/count_points.csv"
+      },
+      "endTime": "2026-10-09T08:43:24+00:00",
+      "actionStatus": {
+        "@id": "http://schema.org/CompletedActionStatus"
+      },
+      "instrument": {
+        "@id": "https://www.python.org/downloads/release/python-3148/"
+      },
+      "agent": {
+        "@id": "https://orcid.org/0000-0001-9842-9718"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "@type": "Person",
+      "name": "Stian Soiland-Reyes",
+      "affiliation": {
+        "@id": "https://ror.org/027m9bs27"
+      }
+    },
+    {
+      "@id": "https://pypi.org/project/requests/2.34.2/",
+      "@type": "SoftwareApplication",
+      "name": "Requests",
+      "description": "Python HTTP library, used for the HTTPS GET of each file.",
+      "url": "https://requests.readthedocs.io/",
+      "version": "2.34.2"
+    },
+    {
+      "@id": "https://www.python.org/downloads/release/python-3148/",
+      "@type": "SoftwareApplication",
+      "name": "Python",
+      "description": "Python standard library zipfile module, used to extract the CSV member of each ZIP archive.",
+      "url": "https://docs.python.org/3/library/zipfile.html",
+      "version": "3.14.8"
+    },
+    {
+      "@id": "http://schema.org/CompletedActionStatus",
+      "@type": "ActionStatusType",
+      "name": "Completed"
+    }
+  ]
+}

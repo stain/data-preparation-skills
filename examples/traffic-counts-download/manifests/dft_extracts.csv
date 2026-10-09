@@ -1,0 +1,5 @@
+file,source_key,source_rows,filter,rows,count_points,first_year,last_year
+traffic_raw_6069.csv,raw_counts,5269632,count_point_id = 6069,120,1,2003,2025
+traffic_aadf_6069.csv,aadf,600551,count_point_id = 6069,26,1,2000,2025
+north_west_raw_counts_last_10_years.parquet,raw_counts,5269632,"region_name = 'North West', last 10 years available",226752,3810,2016,2025
+north_west_aadf_last_10_years.parquet,aadf,600551,"region_name = 'North West', last 10 years available",29443,4307,2016,2025

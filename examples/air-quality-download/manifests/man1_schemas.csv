@@ -1,0 +1,121 @@
+file,position,column_name
+man1_2010-06-20_2010-06-22.csv,1,End Date
+man1_2010-06-20_2010-06-22.csv,2,End Time
+man1_2010-06-20_2010-06-22.csv,3,PM10
+man1_2010-06-20_2010-06-22.csv,4,Status/units
+man1_2010-06-20_2010-06-22.csv,5,NO
+man1_2010-06-20_2010-06-22.csv,6,Status/units
+man1_2010-06-20_2010-06-22.csv,7,NO2
+man1_2010-06-20_2010-06-22.csv,8,Status/units
+man1_2010-06-20_2010-06-22.csv,9,NOXasNO2
+man1_2010-06-20_2010-06-22.csv,10,Status/units
+man1_2012-10-21_2012-10-23.csv,1,End Date
+man1_2012-10-21_2012-10-23.csv,2,End Time
+man1_2012-10-21_2012-10-23.csv,3,PM10
+man1_2012-10-21_2012-10-23.csv,4,Status/units
+man1_2012-10-21_2012-10-23.csv,5,NO
+man1_2012-10-21_2012-10-23.csv,6,Status/units
+man1_2012-10-21_2012-10-23.csv,7,NO2
+man1_2012-10-21_2012-10-23.csv,8,Status/units
+man1_2012-10-21_2012-10-23.csv,9,NOXasNO2
+man1_2012-10-21_2012-10-23.csv,10,Status/units
+man1_2018-04-19_2018-04-21.csv,1,End Date
+man1_2018-04-19_2018-04-21.csv,2,End Time
+man1_2018-04-19_2018-04-21.csv,3,PM10
+man1_2018-04-19_2018-04-21.csv,4,Status/units
+man1_2018-04-19_2018-04-21.csv,5,NO
+man1_2018-04-19_2018-04-21.csv,6,Status/units
+man1_2018-04-19_2018-04-21.csv,7,NO2
+man1_2018-04-19_2018-04-21.csv,8,Status/units
+man1_2018-04-19_2018-04-21.csv,9,NOXasNO2
+man1_2018-04-19_2018-04-21.csv,10,Status/units
+man1_2025-05-21_2025-05-23.csv,1,End Date
+man1_2025-05-21_2025-05-23.csv,2,End Time
+man1_2025-05-21_2025-05-23.csv,3,PM10
+man1_2025-05-21_2025-05-23.csv,4,Status/units
+man1_2025-05-21_2025-05-23.csv,5,NO
+man1_2025-05-21_2025-05-23.csv,6,Status/units
+man1_2025-05-21_2025-05-23.csv,7,NO2
+man1_2025-05-21_2025-05-23.csv,8,Status/units
+man1_2025-05-21_2025-05-23.csv,9,NOXasNO2
+man1_2025-05-21_2025-05-23.csv,10,Status/units
+man1_2010-03-27_2010-03-29.csv,1,End Date
+man1_2010-03-27_2010-03-29.csv,2,End Time
+man1_2010-03-27_2010-03-29.csv,3,PM10
+man1_2010-03-27_2010-03-29.csv,4,Status/units
+man1_2010-03-27_2010-03-29.csv,5,NO
+man1_2010-03-27_2010-03-29.csv,6,Status/units
+man1_2010-03-27_2010-03-29.csv,7,NO2
+man1_2010-03-27_2010-03-29.csv,8,Status/units
+man1_2010-03-27_2010-03-29.csv,9,NOXasNO2
+man1_2010-03-27_2010-03-29.csv,10,Status/units
+man1_2010-10-30_2010-11-01.csv,1,End Date
+man1_2010-10-30_2010-11-01.csv,2,End Time
+man1_2010-10-30_2010-11-01.csv,3,PM10
+man1_2010-10-30_2010-11-01.csv,4,Status/units
+man1_2010-10-30_2010-11-01.csv,5,NO
+man1_2010-10-30_2010-11-01.csv,6,Status/units
+man1_2010-10-30_2010-11-01.csv,7,NO2
+man1_2010-10-30_2010-11-01.csv,8,Status/units
+man1_2010-10-30_2010-11-01.csv,9,NOXasNO2
+man1_2010-10-30_2010-11-01.csv,10,Status/units
+man1_2012-03-24_2012-03-26.csv,1,End Date
+man1_2012-03-24_2012-03-26.csv,2,End Time
+man1_2012-03-24_2012-03-26.csv,3,PM10
+man1_2012-03-24_2012-03-26.csv,4,Status/units
+man1_2012-03-24_2012-03-26.csv,5,NO
+man1_2012-03-24_2012-03-26.csv,6,Status/units
+man1_2012-03-24_2012-03-26.csv,7,NO2
+man1_2012-03-24_2012-03-26.csv,8,Status/units
+man1_2012-03-24_2012-03-26.csv,9,NOXasNO2
+man1_2012-03-24_2012-03-26.csv,10,Status/units
+man1_2012-10-27_2012-10-29.csv,1,End Date
+man1_2012-10-27_2012-10-29.csv,2,End Time
+man1_2012-10-27_2012-10-29.csv,3,PM10
+man1_2012-10-27_2012-10-29.csv,4,Status/units
+man1_2012-10-27_2012-10-29.csv,5,NO
+man1_2012-10-27_2012-10-29.csv,6,Status/units
+man1_2012-10-27_2012-10-29.csv,7,NO2
+man1_2012-10-27_2012-10-29.csv,8,Status/units
+man1_2012-10-27_2012-10-29.csv,9,NOXasNO2
+man1_2012-10-27_2012-10-29.csv,10,Status/units
+man1_2018-03-24_2018-03-26.csv,1,End Date
+man1_2018-03-24_2018-03-26.csv,2,End Time
+man1_2018-03-24_2018-03-26.csv,3,PM10
+man1_2018-03-24_2018-03-26.csv,4,Status/units
+man1_2018-03-24_2018-03-26.csv,5,NO
+man1_2018-03-24_2018-03-26.csv,6,Status/units
+man1_2018-03-24_2018-03-26.csv,7,NO2
+man1_2018-03-24_2018-03-26.csv,8,Status/units
+man1_2018-03-24_2018-03-26.csv,9,NOXasNO2
+man1_2018-03-24_2018-03-26.csv,10,Status/units
+man1_2018-10-27_2018-10-29.csv,1,End Date
+man1_2018-10-27_2018-10-29.csv,2,End Time
+man1_2018-10-27_2018-10-29.csv,3,PM10
+man1_2018-10-27_2018-10-29.csv,4,Status/units
+man1_2018-10-27_2018-10-29.csv,5,NO
+man1_2018-10-27_2018-10-29.csv,6,Status/units
+man1_2018-10-27_2018-10-29.csv,7,NO2
+man1_2018-10-27_2018-10-29.csv,8,Status/units
+man1_2018-10-27_2018-10-29.csv,9,NOXasNO2
+man1_2018-10-27_2018-10-29.csv,10,Status/units
+man1_2025-03-29_2025-03-31.csv,1,End Date
+man1_2025-03-29_2025-03-31.csv,2,End Time
+man1_2025-03-29_2025-03-31.csv,3,PM10
+man1_2025-03-29_2025-03-31.csv,4,Status/units
+man1_2025-03-29_2025-03-31.csv,5,NO
+man1_2025-03-29_2025-03-31.csv,6,Status/units
+man1_2025-03-29_2025-03-31.csv,7,NO2
+man1_2025-03-29_2025-03-31.csv,8,Status/units
+man1_2025-03-29_2025-03-31.csv,9,NOXasNO2
+man1_2025-03-29_2025-03-31.csv,10,Status/units
+man1_2025-10-25_2025-10-27.csv,1,End Date
+man1_2025-10-25_2025-10-27.csv,2,End Time
+man1_2025-10-25_2025-10-27.csv,3,PM10
+man1_2025-10-25_2025-10-27.csv,4,Status/units
+man1_2025-10-25_2025-10-27.csv,5,NO
+man1_2025-10-25_2025-10-27.csv,6,Status/units
+man1_2025-10-25_2025-10-27.csv,7,NO2
+man1_2025-10-25_2025-10-27.csv,8,Status/units
+man1_2025-10-25_2025-10-27.csv,9,NOXasNO2
+man1_2025-10-25_2025-10-27.csv,10,Status/units

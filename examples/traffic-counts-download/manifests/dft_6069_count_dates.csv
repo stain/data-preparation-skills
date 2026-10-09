@@ -1,0 +1,6 @@
+year,count_date,weekday,uk_clock,directions,hours,first_hour,last_hour,rows,road_name,road_category,latitude,longitude,observed_motor_vehicles,aadf_motor_vehicles,aadf_estimation_method,after_man1_opened
+2003,2003-10-08,Wednesday,BST,E/W,12,7,18,24,A57,PM,53.47312147,-2.232421589,58503,70345,Counted,False
+2010,2010-06-21,Monday,BST,E/W,12,7,18,24,A57,PM,53.47312147,-2.232421589,52829,64577,Counted,True
+2012,2012-10-22,Monday,BST,E/W,12,7,18,24,A57M,PM,53.47312147,-2.232421589,42887,52463,Counted,True
+2018,2018-04-20,Friday,BST,E/W,12,7,18,24,A57M,PM,53.47312147,-2.232421589,40624,46801,Counted,True
+2025,2025-05-22,Thursday,BST,E/W,12,7,18,24,A57(M),PM,53.47295894,-2.232812414,55883,70480,Counted,True

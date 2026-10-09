@@ -1,0 +1,26 @@
+check_id,severity,status,violations,description
+cp_raw_present,error,pass,0,count point 6069 has raw-count rows
+cp_raw_unique_key,error,pass,0,"one row per count date, hour and direction"
+cp_raw_one_date_per_year,error,pass,0,a single count date in each year
+cp_raw_year_matches_date,error,pass,0,year equals the year of count_date
+cp_raw_both_directions,warn,pass,0,every observed hour has both E and W rows
+cp_raw_direction_codes,error,pass,0,direction_of_travel is E or W
+cp_raw_no_missing_counts,error,pass,0,no missing vehicle counts
+cp_raw_non_negative,error,pass,0,vehicle counts are non-negative
+cp_raw_motor_vehicles_reconcile,error,pass,0,all_motor_vehicles = two_wheeled_motor_vehicles + cars_and_taxis + buses_and_coaches + LGVs + all_HGVs
+cp_raw_hgvs_reconcile,error,pass,0,all_HGVs = HGVs_2_rigid_axle + HGVs_3_rigid_axle + HGVs_4_or_more_rigid_axle + HGVs_3_or_4_articulated_axle + HGVs_5_articulated_axle + HGVs_6_articulated_axle
+cp_raw_coordinates_in_gb,error,pass,0,coordinates within Great Britain bounds
+cp_raw_site_constant_within_date,error,pass,0,"site metadata (road name, category, coordinates, ...) constant within a count date"
+cp_raw_matches_count_point_csv,error,pass,0,vehicle counts identical to DfT's per-count-point file dft_rawcount_count_point_id_6069.csv
+cp_aadf_unique_year,error,pass,0,one AADF row per year
+cp_aadf_counted_in_raw_years,error,pass,0,AADF estimation_method is 'Counted' exactly in the years with raw counts
+nw_raw_unique_key,warn,pass,0,"one row per count point, count date, hour and direction"
+nw_raw_direction_codes,warn,pass,0,"direction_of_travel is one of N, E, S, W, C, J (C and J are not defined in the DfT metadata; lower-case codes also occur nationally before 2016)"
+nw_raw_no_missing_counts,warn,pass,0,no missing vehicle counts
+nw_raw_non_negative,warn,fail,1,vehicle counts are non-negative
+nw_raw_motor_vehicles_reconcile,warn,pass,0,all_motor_vehicles = two_wheeled_motor_vehicles + cars_and_taxis + buses_and_coaches + LGVs + all_HGVs
+nw_raw_hgvs_reconcile,warn,pass,0,all_HGVs = HGVs_2_rigid_axle + HGVs_3_rigid_axle + HGVs_4_or_more_rigid_axle + HGVs_3_or_4_articulated_axle + HGVs_5_articulated_axle + HGVs_6_articulated_axle
+nw_raw_coordinates_in_gb,warn,pass,0,coordinates within Great Britain bounds
+nw_aadf_unique_key,warn,pass,0,one AADF row per count point and year
+nw_aadf_estimation_method_present,warn,pass,0,estimation_method is recorded
+nw_aadf_coordinates_in_gb,warn,pass,0,coordinates within Great Britain bounds

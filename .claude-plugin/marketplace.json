@@ -1,7 +1,7 @@
 {
   "name": "data-preparation-skills",
   "owner": {
-    "name": "Stian Soiland-Reyes"
+    "name": "Stian Soiland-Reyes, The University of Manchester"
   },
   "metadata": {
     "description": "Agent Skills for reproducible data preparation, RO-Crate provenance and data licences",

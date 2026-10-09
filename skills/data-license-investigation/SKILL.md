@@ -3,7 +3,7 @@ name: data-license-investigation
 description: Find out under what terms a dataset may be used and redistributed, record the evidence, and encode the result (or the uncertainty) in metadata. Use before redistributing or publishing downloaded data, when a data portal shows no licence, or when the data owner, operator and publisher are different organisations.
 license: MIT
 metadata:
-  author: Stian Soiland-Reyes
+  author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
   version: "0.1.0"
 ---
 

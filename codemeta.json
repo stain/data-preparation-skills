@@ -1,0 +1,48 @@
+{
+  "@context": "https://w3id.org/codemeta/3.1",
+  "@type": "SoftwareSourceCode",
+  "name": "Data preparation skills",
+  "description": "Agent Skills for reproducible data preparation: scripted downloads with provenance and validation, RO-Crate 1.3 metadata with Process Run Crate actions, and investigating data licences. For Claude Code, OpenAI Codex and other agents supporting the Agent Skills format.",
+  "version": "0.1.0",
+  "dateCreated": "2026-10-09",
+  "license": "https://spdx.org/licenses/MIT",
+  "developmentStatus": "wip",
+  "applicationCategory": "Data preparation",
+  "keywords": [
+    "agent skills",
+    "data preparation",
+    "provenance",
+    "RO-Crate",
+    "FAIR",
+    "data licensing",
+    "reproducibility",
+    "Claude Code",
+    "OpenAI Codex"
+  ],
+  "programmingLanguage": "Markdown",
+  "readme": "README.md",
+  "relatedLink": [
+    "https://agentskills.io/",
+    "https://www.researchobject.org/ro-crate/",
+    "https://w3id.org/ro/crate/1.3"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0001-9842-9718",
+      "givenName": "Stian",
+      "familyName": "Soiland-Reyes",
+      "affiliation": {
+        "@type": "Organization",
+        "@id": "https://ror.org/027m9bs27",
+        "name": "The University of Manchester"
+      }
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@id": "https://orcid.org/0000-0001-9842-9718"
+    }
+  ],
+  "copyrightYear": 2026
+}

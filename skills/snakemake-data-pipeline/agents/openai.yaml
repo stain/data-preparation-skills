@@ -1,0 +1,4 @@
+interface:
+  display_name: "Snakemake Data Pipeline"
+  short_description: "Snakemake overlay for data-preparation scripts"
+  default_prompt: "Add a Snakemake workflow as an overlay of our existing download and transformation scripts, so missing or outdated files are rebuilt without re-downloading anything that exists and without losing manifests or RO-Crate metadata."

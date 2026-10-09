@@ -4,7 +4,7 @@ description: Download external datasets and transform them into an analysis-read
 license: MIT
 metadata:
   author: "Stian Soiland-Reyes (https://orcid.org/0000-0001-9842-9718), The University of Manchester"
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # Reproducible data preparation
@@ -143,16 +143,9 @@ For a database hand-out (DuckDB worked well):
   something changed). Check by re-running and diffing.
 - Commit in small steps with messages that record decisions; keep a plan with an explicit
   **decision points** list; record decided items with dates.
-- A workflow manager (e.g. Snakemake) can be added as an **overlay** of working scripts:
-  - one job per external file, so a missing file does not delete the others (Snakemake deletes
-    a job's declared outputs before running it);
-  - call scripts with `--no-check` so existing downloads are never re-fetched; check upstream
-    changes outside the workflow;
-  - leave manifests and provenance metadata as script side effects (not declared outputs) while
-    scripts still read their previous state; later, make metadata generation a pure function;
-  - mtime-only rerun triggers so editing a script does not re-run downloads;
-  - test: delete one small file → only it is fetched; force one step → downstream rebuilt with
-    identical outputs.
+- A workflow manager can be added as an **overlay** of the working scripts, rebuilding only
+  what is missing without re-downloading or losing provenance: see the `snakemake-data-pipeline`
+  skill.
 
 ## 7. Reporting
 

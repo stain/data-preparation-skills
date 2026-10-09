@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 (2026-10-09)
+
+- New skill `snakemake-data-pipeline`: Snakemake as an overlay of existing download and
+  transformation scripts (one job per external file, `--only`/`--no-check`, side-effect manifests
+  and RO-Crate metadata, previews depending on their writers, mtime-only profile, tests), with a
+  tested example Snakefile and profile; general Snakemake authoring deferred to bioSkills
+  `snakemake-workflows`.
+- `reproducible-data-preparation` now points to it instead of listing the workflow details.
+
 ## 0.1.0 (2026-10-09)
 
 First release.

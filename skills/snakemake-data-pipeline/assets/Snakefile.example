@@ -1,0 +1,127 @@
+# Example from the snakemake-data-pipeline skill: a tested overlay (Snakemake 9.27) of download
+# and filter scripts for UK road traffic counts (DfT) and air-quality downloads (site MAN1).
+# Script names and paths are those of the original project; adapt them to yours.
+#
+# Snakemake overlay of the dataset-preparation scripts (staff only).
+#
+# The scripts in datasets/scripts/ remain runnable on their own; this workflow only declares
+# their inputs and outputs so that a part of the pipeline can be (re)built on its own:
+#
+#   snakemake -n                                   # what would run (dry run)
+#   snakemake                                      # bring everything up to date
+#   snakemake datasets/interim/traffic_raw_6069.csv
+#   snakemake --list-rules
+#
+# Run from the repository root in the `workshop8` environment. workflow/profiles/default sets
+# one core and mtime-only rerun triggers (see workflow/README.md).
+#
+# External downloads are never repeated if the file already exists: each download is its own
+# job (so a missing file does not delete the others), and the scripts are called with
+# --no-check. To check upstream for changes, run the download scripts directly (without
+# --no-check), outside Snakemake.
+#
+# Manifests, schemas and RO-Crate metadata are written by the scripts as side effects and are
+# deliberately not declared as outputs: Snakemake deletes outputs before re-running a job, and
+# the scripts read their previous manifest/crate to keep provenance history.
+
+PY = "python -I datasets/scripts"
+RAW_DFT = "datasets/raw/dft"
+RAW_MAN1 = "datasets/raw/man1"
+
+# DfT files: download name -> CSV members extracted from it
+DFT_FILES = {
+    "dft_traffic_counts_raw_counts.zip": ["dft_traffic_counts_raw_counts.csv"],
+    "dft_traffic_counts_aadf.zip": ["dft_traffic_counts_aadf.csv"],
+    "count_points.zip": ["count_points.csv"],
+    "all-traffic-data-metadata.pdf": [],
+    "dft_rawcount_count_point_id_6069.csv": [],
+    "dft_aadf_count_point_id_6069.csv": [],
+}
+DFT_DOWNLOADS = [f"{RAW_DFT}/{f}" for f in DFT_FILES]
+DFT_EXTRACTED = [f"{RAW_DFT}/extracted/{m}" for ms in DFT_FILES.values() for m in ms]
+
+DFT_INTERIM = [
+    "datasets/interim/traffic_raw_6069.csv",
+    "datasets/interim/traffic_aadf_6069.csv",
+    "datasets/interim/north_west_raw_counts_last_10_years.parquet",
+    "datasets/interim/north_west_aadf_last_10_years.parquet",
+]
+DFT_REPORTS = [
+    "datasets/manifests/dft_6069_count_dates.csv",
+    "datasets/manifests/dft_extracts.csv",
+    "datasets/manifests/dft_validation.csv",
+]
+
+wildcard_constraints:
+    dft_file = "|".join(DFT_FILES).replace(".", r"\."),
+    member = r"[^/]+",
+
+
+rule all:
+    input:
+        DFT_DOWNLOADS,
+        DFT_INTERIM,
+        DFT_REPORTS,
+        "datasets/manifests/man1_hours_per_day.csv",
+        f"{RAW_DFT}/ro-crate-preview.html",
+        f"{RAW_MAN1}/ro-crate-preview.html",
+
+
+rule download_dft:
+    """Download one DfT file, unless it is already present."""
+    output:
+        f"{RAW_DFT}/{{dft_file}}",
+    shell:
+        f"{PY}/download_dft.py --only {{wildcards.dft_file}} --no-check --no-preview"
+
+
+rule extract_dft:
+    """Extract the CSV member of a DfT ZIP (no upstream request)."""
+    input:
+        f"{RAW_DFT}/{{member}}.zip",
+    output:
+        f"{RAW_DFT}/extracted/{{member}}.csv",
+    shell:
+        f"{PY}/download_dft.py --only {{wildcards.member}}.zip --no-check --no-preview"
+
+
+rule filter_dft:
+    """Count point 6069 and North West extracts, count-date inventory, validation."""
+    input:
+        DFT_EXTRACTED,
+        f"{RAW_DFT}/dft_rawcount_count_point_id_6069.csv",
+    output:
+        DFT_INTERIM,
+        DFT_REPORTS,
+    shell:
+        f"{PY}/filter_dft.py"
+
+
+rule download_man1:
+    """MAN1 downloads for the count dates; existing CSVs are not requested again."""
+    input:
+        "datasets/manifests/dft_6069_count_dates.csv",
+    output:
+        "datasets/manifests/man1_hours_per_day.csv",
+        "datasets/manifests/man1_schemas.csv",
+    shell:
+        f"{PY}/download_man1.py --no-preview"
+
+
+# Jobs that rewrite each crate's metadata as a side effect: the preview waits for them.
+CRATE_WRITERS = {
+    RAW_DFT: DFT_DOWNLOADS + DFT_EXTRACTED,
+    RAW_MAN1: ["datasets/manifests/man1_hours_per_day.csv"],
+}
+
+
+rule crate_preview:
+    """HTML preview of an RO-Crate (needs `npm ci`; fetches the pinned layout)."""
+    input:
+        "{crate}/ro-crate-metadata.json",
+        lambda wildcards: CRATE_WRITERS.get(wildcards.crate, []),
+    output:
+        "{crate}/ro-crate-preview.html",
+    shell:
+        f"{PY}/crate_common.py preview {{wildcards.crate}}"
+

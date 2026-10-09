@@ -5,13 +5,14 @@ read `AGENTS.md`). Read this before changing anything.
 
 ## What this is
 
-Three [Agent Skills](https://agentskills.io/specification) for data preparation, packaged for
+Four [Agent Skills](https://agentskills.io/specification) for data preparation, packaged for
 Claude Code and OpenAI Codex:
 
 | Skill | Scope |
 |---|---|
 | `skills/reproducible-data-preparation/` | downloads with provenance, typing and validation, time and geography alignment, just-enough transformation, the data product, workflow-manager overlay |
 | `skills/ro-crate-provenance/` | RO-Crate **1.3** metadata (+ Process Run Crate 0.6), previews, validation with rocrate-validator |
+| `skills/snakemake-data-pipeline/` | Snakemake as an overlay of existing scripts: per-file download jobs, no re-downloads, side-effect provenance files, testing; general authoring deferred to bioSkills `snakemake-workflows` |
 | `skills/data-license-investigation/` | roles, evidence, classification, decision, encoding licence terms in metadata |
 
 Distilled in October 2026 from preparing a teaching dataset (UK road traffic counts + hourly air
@@ -99,4 +100,4 @@ check.
 - Candidate new skills from the same work: defining and evaluating analytical metrics
   (candidate metrics, validity, boundary conditions, assumption checks); packaging data and
   software environments for learners (disk quotas, several access routes, testing snippets
-  headlessly); Workflow Run Crate for workflow managers.
+  headlessly); Workflow Run Crate generation for a Snakemake run (see `snakemake-data-pipeline` § 3).

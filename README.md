@@ -10,6 +10,7 @@ clear licence terms. The skills work with Claude Code, OpenAI Codex and other ag
 |---|---|
 | [`reproducible-data-preparation`](skills/reproducible-data-preparation/SKILL.md) | download data from public sources (statistics portals, monitoring networks, web forms), integrate sources with different grains, time bases or locations, and hand a database or files to analysts or students |
 | [`ro-crate-provenance`](skills/ro-crate-provenance/SKILL.md) | need to describe data files and how they were produced, with checksums, licences and attribution, as an RO-Crate 1.3, and validate it |
+| [`snakemake-data-pipeline`](skills/snakemake-data-pipeline/SKILL.md) | want to add Snakemake to existing download and transformation scripts, so only missing or outdated files are rebuilt, without re-downloading external data or losing manifests and RO-Crate metadata |
 | [`data-license-investigation`](skills/data-license-investigation/SKILL.md) | must find out whether and how you may use or redistribute a dataset, especially when no licence is shown or owner, operator and publisher differ |
 
 They were distilled from preparing a teaching dataset (UK road traffic counts joined to hourly
@@ -22,7 +23,8 @@ reproducible-data-preparation
   ├─ download step ──► ro-crate-provenance        describe each download directory, with actions
   │                └─► data-license-investigation  what goes in `license` and `creditText`
   ├─ transform step ─► ro-crate-provenance        derived files `isBasedOn` their inputs
-  └─ product step ──► both: the package carries its metadata and its usage terms
+  ├─ product step ──► both: the package carries its metadata and its usage terms
+  └─ workflow ──────► snakemake-data-pipeline     overlay that rebuilds only what is missing
 ```
 
 ## RO-Crate in brief
@@ -76,7 +78,7 @@ As a plugin, in two steps (in Claude Code; or `claude plugin …` in a terminal)
    *Marketplace "data-preparation-skills" not found*, the marketplace has not been added yet:
    run the `add` step and check it with `/plugin marketplace list`.
 2. **Install the plugin.** The part after `@` is the marketplace's name, which here is the same
-   as the plugin's name. The plugin contains **all three skills**.
+   as the plugin's name. The plugin contains **all four skills**.
 
 Start a new session (or restart Claude Code) so the skills are loaded; `/plugin` shows the
 installed plugin. Claude then picks a skill when a request matches its description, or you can
@@ -128,8 +130,9 @@ Data preparation:
 > Measure our scope options: how many sites, days and rows do we get within 250 m, 500 m and 1 km
 > of the monitoring station, counting only days when the station was operating?
 
-> Add a Snakemake workflow as an overlay of the existing scripts, without re-downloading files
-> that already exist.
+> Use the snakemake-data-pipeline skill to add a Snakemake workflow as an overlay of the existing
+> scripts, without re-downloading files that already exist, and test that deleting one download
+> fetches only that file.
 
 RO-Crate:
 

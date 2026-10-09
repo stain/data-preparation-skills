@@ -1,0 +1,4 @@
+# Default profile for workflow/Snakefile (used automatically).
+cores: 1                 # the scripts share manifests and crates; run one job at a time
+rerun-triggers: [mtime]  # editing a script does not re-run downloads; use --forcerun to rebuild
+printshellcmds: true
